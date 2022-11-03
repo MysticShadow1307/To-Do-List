@@ -1,0 +1,25 @@
+<h2>Welcome to the Todolist</h2>
+<table class="table table-bordered">
+    <thead>
+       <tr>
+            <th>Date</th>
+            <th>Entry</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Action</th>
+       </tr> 
+    </thead>
+    <tbody>
+        <tr *ngFor="let todolistEntry of todolistEntries; let i = index">
+            <td>{{todolistEntry.date}}</td>
+            <td>{{todolistEntry.entry}}</td>
+            <td>{{todolistEntry.status}}</td>
+            <td>{{todolistEntry.priority}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="onEdit(todolistEntry.id)">Edit</button>
+                <button (click)="onDelete(todolistEntry.id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>

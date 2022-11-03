@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="onSubmit()" [formGroup] = "todolistForm">
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="text" class="form-control" formControlName="date">
+
+                <label for="entry">Entry</label>
+                <input type="text" class="form-control" formControlName="entry">
+
+                <label for="status">Status</label>
+                <input type="text" class="form-control" formControlName="status">
+
+                <label for="priority">Priority</label>
+                <input type="text" class="form-control" formControlName="priority">
+            </div>
+            <button [disabled]="!todolistForm.valid" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>
